@@ -1,5 +1,5 @@
-require 'escape_utils/escape_utils'
-require 'escape_utils/version' unless defined? EscapeUtils::VERSION
+require File.expand_path('../escape_utils/escape_utils',  __FILE__)
+require File.expand_path('../escape_utils/version',  __FILE__) unless defined? EscapeUtils::VERSION
 
 module EscapeUtils
   extend self
@@ -9,5 +9,5 @@ module EscapeUtils
   # This is because quotes around HTML attributes are optional in most/all modern browsers at the time of writing (10/15/2010)
   @@html_secure = true
 
-  autoload :HtmlSafety, 'escape_utils/html_safety'
+  autoload :HtmlSafety, File.expand_path('../escape_utils/html_safety',  __FILE__)
 end
